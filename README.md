@@ -1,94 +1,86 @@
-# October 3 — Our Story
+# October 3 — Our Story ♡
 
-Cinematic relationship-memory website for Santhosh & Yelina.
+A cinematic, romantic memory website for Santhosh & Yelina.
 
-## Run locally
+## GitHub Pages
 
-```bash
-npm install
-npm run dev
-```
+This repository is a **plain static HTML website**. It does not require React, Vite, npm, or GitHub Actions.
 
-## Build
+Use:
 
-```bash
-npm run build
-```
+- **Settings → Pages**
+- **Source:** Deploy from a branch
+- **Branch:** main
+- **Folder:** / (root)
 
-## Media setup
+The entry file is `index.html`, and `.nojekyll` is included.
 
-The website code is already configured to load media from:
+## Current repository structure
 
 ```
-public/media/
-```
-
-The complete media collection contains **284 files: 281 images + 3 videos**.
-
-Because the full media collection is too large for a single reliable download, it has been split into **4 smaller ZIP packages**. Download **all four** and extract each ZIP into the **same project root**. Each ZIP contains files destined for `public/media/`.
-
-After extraction, the structure must be:
-
-```
-october-3-our-story/
+MINE/
 ├── index.html
-├── package.json
+├── .nojekyll
 ├── README.md
-├── src/
-│   ├── main.jsx
-│   └── styles.css
-└── public/
-    └── media/
-        ├── ...281 images...
-        ├── us_01.mp4
-        ├── video_20260328_160242.mp4
-        └── us.mp4
+├── media/
+│   └── README.md
+└── October_3_Our_Story_MEDIA_PART_*_of_4/
+    └── relationship media
 ```
 
-**Important:** Do not rename the media files and do not move them out of `public/media/`. The React code already uses `/media/<filename>` paths.
+The website automatically checks the normal `media/` folder **and** the four existing media-part folders, including common `media/` and `public/media/` nested layouts. This means the current uploaded media does not need to be renamed immediately.
 
-## Media package names
+## Media
 
-1. `October_3_Our_Story_MEDIA_PART_1_of_4.zip`
-2. `October_3_Our_Story_MEDIA_PART_2_of_4.zip`
-3. `October_3_Our_Story_MEDIA_PART_3_of_4.zip`
-4. `October_3_Our_Story_MEDIA_PART_4_of_4.zip`
+Expected collection:
 
-Download all four before deploying so every referenced memory is available.
+- **281 photos**
+- **3 videos**
+- Total: **284 media files**
 
-## Vercel
+Video filenames:
 
-The project is Vite-based. After the media is placed under `public/media/`, connect the GitHub repository to Vercel and use:
+```
+us_01.mp4
+video_20260328_160242.mp4
+us.mp4
+```
 
-- Build command: `npm run build`
-- Output directory: `dist`
+Keep original filenames.
 
-## Notes
+### Recommended final organization
 
-- The site uses `Yelina` throughout the relationship-facing copy.
-- Photos and videos are treated as supplied memories.
-- Avatar/3D sections are artistic recreations.
-- Media paths are local and begin with `/media/`.
+For the cleanest repository, eventually place all 284 files directly under:
 
+```
+media/
+```
 
-## Upload the media from your Windows desktop with GitHub Desktop
+But the current website has fallback loading for the four existing media-part folders, so the site is not dependent on that cleanup.
 
-1. Clone this repository from GitHub Desktop using the repository URL.
-2. Do **not** use your unrelated `CALISTA-VITA-2026` local folder.
-3. After cloning, open the cloned `october-3-our-story` folder.
-4. Extract all 4 media ZIP packages into that folder so the final location is:
-   `october-3-our-story/public/media/`
-5. In GitHub Desktop, choose **Current repository → october-3-our-story**.
-6. Enter a summary such as `Add relationship media`.
-7. Click **Commit to main**, then **Push origin**.
-8. GitHub Pages will automatically rebuild after the push.
+## Website sections
 
-### Important GitHub file-size limit
+- OUR STORY
+- MEMORIES
+- RECREATION
+- LETTER
 
-GitHub does not accept normal Git files larger than 100 MB. If one of the 3 videos is over 100 MB, do not try to push that video normally; it must be reduced/split or hosted separately. The ZIP files themselves should not be uploaded to the repository.
+The navigation uses same-page anchors, so there is no SPA router and no refresh/404 routing problem.
 
-### GitHub Pages
+## Design
 
-The project now includes a Vite GitHub Pages configuration and an automatic Actions deployment workflow. After the first workflow completes, the site is published at:
+The page is intentionally romantic and cinematic:
 
-`https://s-sam-02.github.io/october-3-our-story/`
+- glass navigation
+- pink/violet glow
+- 3D-inspired couple figures
+- perspective/depth animation
+- butterflies
+- cinematic typography
+- real memory gallery
+- original video section
+- personal letter
+
+## Important
+
+Do not restore the old React/Vite files unless you intentionally move back to a build-based deployment. The current version is designed specifically for simple GitHub Pages branch publishing.

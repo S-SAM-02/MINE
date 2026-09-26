@@ -1,86 +1,51 @@
 # October 3 — Our Story ♡
 
-A cinematic, romantic memory website for Santhosh & Yelina.
+A cinematic, 3D-style memory website for Santhosh & Yelina.
 
 ## GitHub Pages
 
-This repository is a **plain static HTML website**. It does not require React, Vite, npm, or GitHub Actions.
+This is now a **plain static GitHub Pages website**. It does not require React, Vite, npm, or GitHub Actions.
 
 Use:
 
 - **Settings → Pages**
 - **Source:** Deploy from a branch
-- **Branch:** main
-- **Folder:** / (root)
+- **Branch:** `main`
+- **Folder:** `/ (root)`
 
-The entry file is `index.html`, and `.nojekyll` is included.
-
-## Current repository structure
-
-```
-MINE/
-├── index.html
-├── .nojekyll
-├── README.md
-├── media/
-│   └── README.md
-└── October_3_Our_Story_MEDIA_PART_*_of_4/
-    └── relationship media
-```
-
-The website automatically checks the normal `media/` folder **and** the four existing media-part folders, including common `media/` and `public/media/` nested layouts. This means the current uploaded media does not need to be renamed immediately.
+The entry point is `index.html`. `.nojekyll` is included.
 
 ## Media
 
-Expected collection:
+The repository contains the relationship media in four existing folders:
 
-- **281 photos**
-- **3 videos**
-- Total: **284 media files**
+- `October_3_Our_Story_MEDIA_PART_1_of_4/`
+- `October_3_Our_Story_MEDIA_PART_2_of_4/`
+- `October_3_Our_Story_MEDIA_PART_3_of_4/`
+- `October_3_Our_Story_MEDIA_PART_4_of_4/`
 
-Video filenames:
+The collection is **281 photos + 3 videos**. The website discovers the files directly from the repository tree, so the media does not need to be renamed or moved.
 
-```
-us_01.mp4
-video_20260328_160242.mp4
-us.mp4
-```
+Video files currently in the collection:
 
-Keep original filenames.
+- `video_20260328_160242.mp4`
+- `us.mp4`
+- `us_01.mp4`
 
-### Recommended final organization
+## Website experience
 
-For the cleanest repository, eventually place all 284 files directly under:
+- 3D-inspired cinematic hero
+- glass navigation and depth effects
+- one continuous slideshow for all supplied photos
+- autoplay, pause-on-hover, swipe/drag and arrow-key controls
+- 3D perspective photo frame and progress indicator
+- three native HTML video players with proper controls
+- memory recreation section
+- romantic letter section
+- responsive mobile layout
 
-```
-media/
-```
-
-But the current website has fallback loading for the four existing media-part folders, so the site is not dependent on that cleanup.
-
-## Website sections
-
-- OUR STORY
-- MEMORIES
-- RECREATION
-- LETTER
-
-The navigation uses same-page anchors, so there is no SPA router and no refresh/404 routing problem.
-
-## Design
-
-The page is intentionally romantic and cinematic:
-
-- glass navigation
-- pink/violet glow
-- 3D-inspired couple figures
-- perspective/depth animation
-- butterflies
-- cinematic typography
-- real memory gallery
-- original video section
-- personal letter
+The slideshow uses the GitHub repository tree at runtime to discover the real media files, so future media additions can be picked up without rebuilding a framework project.
 
 ## Important
 
-Do not restore the old React/Vite files unless you intentionally move back to a build-based deployment. The current version is designed specifically for simple GitHub Pages branch publishing.
+Do not restore the old React/Vite project or GitHub Actions workflow unless the deployment architecture is intentionally changed again.

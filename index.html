@@ -67,7 +67,6 @@ function repairMedia(el){
   });
 }
 document.querySelectorAll("img,video").forEach(repairMedia);
-document.querySelectorAll("img,video").forEach(el=>el.dispatchEvent(new Event("error")));
 document.getElementById('music').addEventListener('click',function(){this.textContent=this.textContent.includes('OFF')?'♫ MUSIC ON':'♫ MUSIC OFF';});
 const imgs=[...document.querySelectorAll('.memory img')];
 const reveal=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.parentElement.classList.add('seen');reveal.unobserve(e.target)}}),{rootMargin:'80px'});
